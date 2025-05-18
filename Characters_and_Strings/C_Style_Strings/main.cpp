@@ -57,6 +57,10 @@ int main (){
      cin.getline(full_name,50);
      cout<<full_name<<endl;
 
+     //comparing two strings
+
+     
+
 
 
 
