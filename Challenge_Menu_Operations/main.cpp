@@ -66,7 +66,7 @@ int main(){
                 cout<<"The smallest number is "<<smallestNumber<<endl;
                 cout<<endl;
             }   
-        }else if(choice == 'L'||choice=='L'){
+        }else if(choice == 'L'||choice=='l'){
             if(numberList.empty()){
                 cout<<"Unable to determine the smallest number - list is empty. \n";
                 cout<<endl;
