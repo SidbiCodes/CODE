@@ -26,6 +26,7 @@ we can assigne values to string with assignment oprator unike strcpy().
 s1 = s2 + " " + s3 + " " + "something"
 stringInS2 stringIns3 something
 
+REMEMBER: two consecutive string litrals can not be added or compound concatinated. You will have to use strcat();
 // some operations
 1) Extractrion a sting from a substring
 string s1 = "This is a test";
@@ -41,7 +42,7 @@ syntax:     StrObject.find("string",index) // starts the search from the index m
 
 syntax:     StrObj.find('e') // returns the index of the occurance of the constructer
 
-if there is no string found ; the the find() would return string::npos
+if there is no string found ; the the find() would return string::npos ------------- this can be used for an if wlsw conditiopn to find the word in a sentence
 
 s1.rfind() // this would start ifinding the string from reverse
 
@@ -66,6 +67,8 @@ s1.length(); // 5
 s1 += " James"
 cout s1;
 output: StringatS1 James
+    5.1) .insert (index,constructor or char or space or whatever)
+    formatted_full_name.insert(7, " ");
 
 6) getline() 
 used for input streams
