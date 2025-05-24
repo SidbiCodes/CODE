@@ -14,7 +14,7 @@ int main (){
      char first_name [20]{0};
      char last_name [20]{0};
      char full_name [50]{0};
-     char temp [50]{0};
+     
      //check array value without initialization = garbage value whatever is the the location
      //check with initialization = \0 (null terminater) is the first characters in the string therefore the string terminates with no output
      cout<<first_name<<endl;
