@@ -56,22 +56,6 @@ int main (){
      cout<<"Enter full name with space and check the behaviour"<<endl;
      cin.getline(full_name,50);
      cout<<full_name<<endl;
-
-     //comparing two strings
-
-     
-
-
-
-
-
-    
-
-
-
-
-
-
-
+     //comparing two strin
     return 0;
 }
