@@ -1,0 +1,158 @@
+Implementing a Recursive Function - Sum of Digits
+Problem Title: Sum of Digits using Recursion
+
+Problem Description:
+
+Write a C++ program to find the sum of digits of a number using recursion.
+
+You need to implement the function int sum_of_digits(int n) that takes an integer n as an argument and returns the sum of its digits.
+
+Function Signature:
+
+int sum_of_digits(int n)
+
+Input:
+
+An integer
+
+Output:
+
+Return the sum of the digits of n.
+
+Example:
+
+Input:
+
+n = 1234
+
+Output:
+
+10
+
+Explanation:
+
+The sum of digits of 1234 is 1 + 2 + 3 + 4 = 10.
+
+Here are a few more examples:
+
+Test Case 1:
+
+Input: n = 5678
+
+Output: 26
+
+Test Case 2:
+
+Input: n = 9999
+
+Output: 36
+
+Test Case 3:
+
+Input: n = 1000
+
+Output: 1
+
+_____________________________________________
+
+solution: (1)
+#include <iostream>
+#include <string>
+using namespace std;
+string _n;
+
+int sum_of_digits(int n) {
+    // Write your code below this line
+    
+    int sum {0};
+    _n= to_string(n);
+    if(_n.length()==0){
+        return sum =0;
+    
+    }else{
+        for (size_t i{0};i<_n.length();i++){
+            sum += _n.at(i)-'0';
+        }
+        return sum;
+    }
+    
+    
+    
+    // Write your code above this line
+}
+
+_____________________________________________ Explanation on why to subtract a '0' when storing text numiric into a string. This is to convert it into a digit to its numeric value from ASCII code.
+
+Key changes
+
+_n = to_string(n); to get "1234" from 1234.
+
+In the loop, sum += _n.at(i) - '0'; to convert each character '0'…'9' into its integer 0–9.
+
+Now sum_of_digits(1234) correctly returns 10.
+
+
+You said:
+ '0'
+
+explain this
+
+
+ChatGPT said:
+
+Thought for a couple of seconds
+In C++, when you write a character literal in single quotes—like '0'—you’re referring to the character whose code point corresponds to the digit zero in the execution character set (almost always ASCII). Here’s what’s going on under the hood:
+
+Character literal to integer value:
+
+In ASCII, '0' has the numeric value 48 (decimal).
+
+Similarly, '1' is 49, '2' is 50, …, '9' is 57.
+
+Promotion in arithmetic:
+
+When you do an expression like c - '0', where c is a char, C++ promotes both operands to int.
+
+So if c == '3' (i.e. 51),
+
+cpp
+Copy
+Edit
+c - '0'  // 51 - 48 == 3
+giving you the actual numeric digit.
+
+Why subtract '0'?
+
+It converts the character code back into its integer digit.
+
+Without the subtraction, summing the characters would add their code points (e.g. '1' + '2' would be 49 + 50 = 99, not 3).
+
+So in your loop:
+
+cpp
+Copy
+Edit
+sum += _n.at(i) - '0';
+you’re taking each digit‐character (e.g. '7'), turning it into its code (55), subtracting the code for '0' (48), and ending up with the integer 7. That’s how you map from text‐digit to numeric‐digit cleanly and portably.
+
+
+
+
+
+
+
+
+_____________________________________________
+solution(2):
+#include <iostream>
+#include <string>
+
+int sum_of_digits(int n) {
+    // Write your code below this line
+    
+    if (n == 0)
+        return 0;
+    return (n % 10 + sum_of_digits(n / 10));
+    
+    // Write your code above this line
+}

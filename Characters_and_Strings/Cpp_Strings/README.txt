@@ -77,7 +77,7 @@ cin>>s1;
 
 hello there
 
-s1: hello // there is skipped as the cin will stop when it seews a white space or \n.
+s1: hello // there is skipped as the cin will stop when it sees a white space or \n.
 
 to avoid tis we use getline.
 
