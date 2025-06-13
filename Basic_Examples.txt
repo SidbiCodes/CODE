@@ -1,0 +1,251 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+//global variable declaration
+const int PriceSmallRoom {25};
+const int PriceLargeRoom {35};
+const float SalesTaxRate {0.06};
+const int Validity {30};
+
+int main(){
+    //local variable declaration
+    int smallRoom {0};
+    int largeRoom {0};
+    int rawRoomPrice {0};
+    float totalTax {0};
+    
+    cout<<"Welcome to Franks Cleaning Service\n";
+    cout<<"Please give the No. of small rooms to be cleaned: ";
+    cin>> smallRoom;
+    cout<<"Please give the No. of large rooms to be cleaned: ";
+    cin>> largeRoom;
+    
+    //bill structure
+    cout<<"Number of small rooms: "<<smallRoom<<endl;
+    cout<<"Number of large rooms: "<<largeRoom<<endl;
+    cout<<"Price per small room: $"<<PriceSmallRoom<<endl;
+    cout<<"Price per large room: $"<<PriceLargeRoom<<endl;
+    rawRoomPrice = (smallRoom*PriceSmallRoom)+(largeRoom*PriceLargeRoom);
+    cout<<"Cost: $"<<rawRoomPrice<<endl;
+    totalTax = rawRoomPrice*SalesTaxRate;
+    cout<<"Tax $"<<totalTax<<endl;
+    cout<<"===============================\n";
+    cout<<"Total Estimate = $"<<(totalTax+rawRoomPrice)<<endl;
+    cout<<"This Estimate is valid for "<< Validity<<" days.";
+    
+    return 0;
+}
+
+
+
+Vectors example
+#include <iostream>
+#include<vector>
+using namespace std;
+
+//Global definition
+
+int main(){
+    vector<int>TestScoreStudents{1,2,3,4,5,6,7,8,9,10};
+    int Test_Score_Array[10]={1,2,3,4,5,6,7,8,9,10};
+    int i = 0;
+    int j = 0;
+    int AddValueToMyVector {0};
+    
+    for (i=0;i<=9;i++){
+        
+        cout<<"The value of student " <<i<< " is "<<Test_Score_Array[i]<<endl;
+    }
+    
+    cout<<"using vectors and array output method with []. \n";
+    cout<<"Please add a value to the student testscore \n";
+    cin>>AddValueToMyVector;
+    TestScoreStudents.push_back (AddValueToMyVector);
+    cout<<TestScoreStudents.size()<<endl;
+    
+    for(j=0;j<=((TestScoreStudents.size())-1);j++){
+        cout<<"The value of student "<<j<<" is "<<TestScoreStudents[j]<<endl;
+    }
+    cout<<"using vectors and array output method with vectorname.at() . \n";
+    
+    for(j=0;j<=9;j++){
+        cout<<"The value of student "<<j<<" is "<<TestScoreStudents.at(j)<<endl;
+    }
+    
+    return 0;
+}
+
+
+Challenge exercise: Vectors
+#include <iostream>
+#include <vector>
+//namespace declarations
+using namespace std;
+
+//global declarations
+
+int main(){
+    
+    //local declarations
+    vector<int>vector1;
+    vector<int>vector2;
+    
+    //adding 10 and 20 to vector1 dynamically
+    vector1.push_back(10);
+    vector1.push_back(20);
+    
+    //displaying vector1 elements using .at()
+    cout<<"vector1 element 1 is: "<<vector1.at(0)<<".\n";
+    cout<<"vector1 element 2 is: "<<vector1.at(1)<<".\n";
+    //displaying vurrent size of vector 1:
+    cout<<"The current size of vector1 is: "<<vector1.size()<<".\n";
+    
+    //adding 100 and 200 to vector2 dynamically
+    vector2.push_back(100);
+    vector2.push_back(200);
+
+    //displaying vector2 elements using .at()
+    cout<<"vector2 element 1 is: "<<vector2.at(0)<<".\n";
+    cout<<"vector2 element 2 is: "<<vector2.at(1)<<".\n";
+    //displaying vurrent size of vector 2:
+    cout<<"The current size of vector2 is: "<<vector2.size()<<".\n";
+    
+    //declaring 2D vector
+    vector<vector<int>>vector_2d;
+    //adding vector1 to 2D vector dynamically
+    vector_2d.push_back(vector1);
+    //adding vector2 to 2D  vector dynamically
+    vector_2d.push_back(vector2);
+    
+    //display elements in 2d vector usinf .at()
+    cout<<"vector_2d row 1 elements are: "<<vector_2d.at(0).at(0)<<" "<<vector_2d.at(0).at(1)<<".\n";
+    cout<<"vector_2d row 2 elements are: "<<vector_2d.at(1).at(0)<<" "<<vector_2d.at(1).at(1)<<".\n"; 
+    
+    //changing vector1 element (0) to 1000 using .at()
+    vector1.at(0) = 1000;
+    
+    //display elements in 2d vector usinf .at()
+    cout<<"vector_2d row 1 elements are: "<<vector_2d.at(0).at(0)<<" "<<vector_2d.at(0).at(1)<<".\n";
+    cout<<"vector_2d row 2 elements are: "<<vector_2d.at(1).at(0)<<" "<<vector_2d.at(1).at(1)<<".\n"; 
+    
+    //displaying vector1 elements using .at()
+    cout<<"vector1 element 1 is: "<<vector1.at(0)<<".\n";
+    cout<<"vector1 element 2 is: "<<vector1.at(1)<<".\n";
+    
+    return 0;
+
+// Change Calculator
+#include <iostream>
+using namespace std;
+
+//global variable declaration
+// constant denomination
+/*******************************************
+ * 1 dollar = 100c
+ * 1 quarter = 25c
+ * 1 dime = 10c
+ * 1 nickel is 5 cents
+ * 1 penny is 1 cent
+ * *****************************************/
+
+const int kDollar {100};
+const int kQuarter {25};
+const int kDime {10};
+const int kNickel{5};
+const int kPenny {1};
+
+int main (){
+    // local declarations
+    int AmountInCents {}, Balance {}, Dollar{}, Quarter{}, Dime {}, Nickel {}, Penny {};
+    
+    
+    //enter the conversion amount in cents
+    cout<< "Enter change amount in Cents: \n";
+    cin>> AmountInCents;
+     
+     //dollar is no of c divided by 100
+     //balance is no of c - (doller*100)
+     Dollar = AmountInCents / kDollar;
+     Balance = AmountInCents - (Dollar*kDollar);
+     //quarter = balance divided by 25c
+     //balance = balance - (quarters * 25c)
+     Quarter = Balance/kQuarter;
+     Balance -= Quarter*kQuarter;
+     //dime = balance divided by 10
+     //balance = balance - (quarter*10)
+     Dime = Balance/kDime;
+     Balance -= Dime*kDime;
+     //nickel = balance divided by 25
+     //balance = balance - (balance* nickel)
+     Nickel = Balance/kNickel;
+     Balance -= Nickel*kNickel;
+     //penny = balance
+     Penny = Balance;
+     
+     //Cout statement
+     cout<< "Dollar: "<<Dollar<<endl;
+     cout<< "Quarter: "<<Quarter<<endl;
+     cout<< "Dime: "<<Dime<<endl;
+     cout<< "Nickel: "<<Nickel<<endl;
+     cout<< "Penny: "<<Penny<<endl;
+    
+    
+    return 0;
+} 
+
+
+
+While loop with bool control
+
+//using while and do while loops
+#include <iostream>
+using namespace std;
+//global declarations
+
+int main(){
+    //Task: Enter an integer between 1 to 5.
+    //local declarations
+    bool result {false};
+    int numberEntered {0};
+    
+    while (!result){
+        cout<<"enter an integer between 1 to 5: ";
+        
+        cin>> numberEntered;
+        cout<<endl;
+
+        if(numberEntered>=1 && numberEntered<=5){
+            cout<<"if entered"<<endl;
+            result = true;
+        }else{
+            cout<<"else entered"<<endl;
+            result = false;
+            cout<<"Please enter an integer value between 1 to 5!!\n";
+        }
+    }
+    cout<<"correct value entered.\n";
+    
+    //Second way with OR Gate
+        while (!result){
+        cout<<"enter an integer between 1 to 5: ";
+        
+        cin>> numberEntered;
+        cout<<endl;
+
+        if(numberEntered<1 || numberEntered>5){
+            cout<<"if entered"<<endl;
+            cout<<"Please enter an integer value between 1 to 5!!\n";
+            result = false;
+        }else{
+            cout<<"else entered"<<endl;
+            result = true;
+            cout<<"correct value entered.\n";
+        }
+    }
+
+    
+    
+    return 0;
+}
+
