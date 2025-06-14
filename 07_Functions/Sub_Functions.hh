@@ -5,7 +5,7 @@ using namespace std;
 //Function Prototypes
 void displayMenu(char &choice);
 void printTheNumList(const vector<int> &numberList);
-void addNumToList(vector<int> &numberList,int num);
+void addNumToList(vector<int> &numberList);
 void calcMean(const vector<int> &numberList);
 void largestNumber(const vector<int> &numberList);
 void smallestNumber(const vector<int> &numberList);
@@ -25,7 +25,7 @@ void displayMenu(char &choice){
 }
 void printTheNumList(const vector<int> &numberList){    
     if(numberList.empty()){
-        cout<<"[] - the list is empty"<<endl;
+        cout<<"[nothing] - the list is empty"<<endl;
         cout<<endl;
     }else{
         cout<<"[ ";
@@ -37,7 +37,8 @@ void printTheNumList(const vector<int> &numberList){
     }
 
 }
-void addNumToList(vector<int> &numberList,int num){
+void addNumToList(vector<int> &numberList){
+    int num{0};
     cout<<"Add an integer to the number list: ";
     cin>>num;
     numberList.push_back(num);
