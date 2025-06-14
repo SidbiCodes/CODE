@@ -13,7 +13,7 @@ constexpr int SCREEN_HEIGHT = 10;
 constexpr int BUFFER_SIZE = SCREEN_WIDTH * SCREEN_HEIGHT;
 
 // ASCII characters used for shading, from dimmest → brightest
-const char* SHADING_CHARS = ".,-~:;=!*#$@";
+const char* SHADING_CHARS = "dshjkgvbksdj";
 
 int main() {
     // Major and minor radii of the torus
