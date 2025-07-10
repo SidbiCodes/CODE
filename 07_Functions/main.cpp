@@ -22,6 +22,5 @@ int main(){
             cout<<"endl";
         }
     }while(choice !='Q' && choice != 'q');
-
     return 0;
 }
