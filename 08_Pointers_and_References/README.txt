@@ -47,7 +47,44 @@ Dereferencing can be done with to iterate through a vector too. Make a vector po
 
 
 5) Dynamic memory allocation:
+Purpose: Helpful when data size is unknown and must be allocated dynamically.
+We can allocate storage at runtime.
+- We access heap storage through pointers.
+ 
+ Synrax:
 
+ int *int_ptr {null_ptr}; // declaring a pointer
+
+ //now we reference the pointer to "new" int in heap instead of "&" referanca to other variable address.
+ int_ptr = new int // allocating an integer to the heap memo by int_ptr pointer.
+ cout<< int_ptr; //this gives the address of the allocated space on heap
+ cout<<*int_ptr// will display garbage value stored in the heap. 
+ *int_ptr = 100;
+ cout<<*int_ptr//  this gives 100
+
+ //  Deallocaring the memory on the heap
+
+ delete int_ptr; // this deallocates the heap memory which was accessed by the pointer
+
+ //imp: MEMORY LEAKING
+
+ do not assign the pointer pointing to heap memo to any other var before deallocating it [delet ptr;]
+ this might lead to used storage in heap that is not accessable anymore.
+ - the storage on heap is just of a datatype and has no name
+ - the only way to get to the data is by pointer, so deallocate the memo then reuse the pointer.
+
+ similarly with array:
+
+int *ptr_array {null_ptr};
+int size {0};
+cin>>size;
+ptr_array = new int [size]; //now the ptr_array pointer is pointing to the address of the first element of the array.
+delete [] ptr_array; //deallocating the pointer from the dynymic array in the heap storage.
+
+Note:
+delete / delete []  frees up the dynamic memo on the heap accessed by the pointer.
+
+6)Relation between Pointers and Arrays:
 
 
 

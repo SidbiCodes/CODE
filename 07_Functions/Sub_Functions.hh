@@ -49,8 +49,7 @@ void calcMean(const vector<int> &numberList){
     if(numberList.empty()){
         cout<<"Unable to calculate the mean - no data"<<endl;
         cout<<endl;
-    }else{
-        double mean {0};
+    }else{ 
         int Sum{0};
         for(auto Val:numberList){
             Sum+=Val;
