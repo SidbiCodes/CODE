@@ -8,14 +8,24 @@ We can allocate memory dynamically to the heap or free space. This memory doesnt
 Application: embedded systems.
 
 1) Declaring a pointer variable:
+
      variable_type *pointer_name;// Only declaration will have garbage data in the pointer.
+
 2) Initialization:
+
      variable_type *pointer_name {nullptr};//nullptr= pointing no where and is different from pointing anywhere
+     
      //always initialize a pointer as uninitialized pointer can point to ranom memory addresses and can be dangerous.
 
 Accessing a pointer address and assigning address to pointer for another variable.
 "&" is the address operator--- used left to the opperand and refers to the address of the opperand.
 # Operand cannot be a constant and an expression which evaluates to a temp value.
+     -> Accessing a pointer address and assigning address to pointer for another variable
+     The & operator is called the address-of operator.
+
+Example:
+You cannot use & on a constant or a temporary value (like &5 or &(a + b)).
+
 # sizeof: this operator tells the size of the memory needed for the variable or pointer in bytes.
 sizeof a pointer is different from what it points to. It can point to a very large memo but all pointers are of same size.
 
@@ -28,7 +38,7 @@ int *_score = {nullptr};
 _score = &score;// _score points to the address of score.
 
 cout<<score;
-cout<<&score;//this value is stored in _score
+cout<<&score;//this value(address) is stored in _score-> i.e. address of score and not integer stored inside score,
 cout<<_score;
 
 4)Dereferencing a pointer:
@@ -62,7 +72,7 @@ We can allocate storage at runtime.
  *int_ptr = 100;
  cout<<*int_ptr//  this gives 100
 
- //  Deallocaring the memory on the heap
+ //  Deallocating the memory on the heap
 
  delete int_ptr; // this deallocates the heap memory which was accessed by the pointer
 
@@ -85,6 +95,35 @@ Note:
 delete / delete []  frees up the dynamic memo on the heap accessed by the pointer.
 
 6)Relation between Pointers and Arrays:
+     value of arr name -> address of first element of array
+     val of pointer var -> is an address
+     if pointer points to the same datatype as the arr elements -> pointer and arr name can be used interchangably.
+
+     what it means?
+      int arrTest[]{1,2,3,4,5}; -> array
+      cout>>arrTest;->address of the first element of the array
+      cout>>(arrTest +1);->second element address
+      cout>>*(arrTest+1);->second element this is same as | cout>>arrTest[1];
+
+      so, if array can be deallocated like pointer then is array a pointer and can pointer output like array?
+      ->yes, array behaves like a pointer and a pointer can behave like array in terms of syntax.
+
+      int *arrPointer {arrTest}; -> initialized the array pointer to array name (first element address of array)
+      cout>>arrPointer;->1st element address
+      cout>>*arrPointer; | cout>>arrPointer[0]; -> first element
+      cout>>(arrPointer+1);->second element address
+      cout>>*(arrPointer+1);->second element
+
+      in short, array and pointers can work with same syntax format if You
+      initialize the pointer array to arrays first element address (with array name).
+
+      Note: There is no array pointer, pointer can only be one dimentional and of a datatype.
+
+      
+
+
+
+
 
 
 
