@@ -5,7 +5,7 @@ using namespace std;
  
 void printArrayMembers (const int &size){
     int *arrPtr {nullptr};
-    arrPtr = new int [5];
+    arrPtr = new int [size];
 
 
     
